@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-//make api call
 
-class Pokeman extends Component{
+//displays 1 poke
+//print data as objects in console log
+
+
+
+class PokeOne extends Component{
     render() {
-        const {name, id} = this.props;
+        const {pokeman, id} = this.props;
         return (
             <div> className = "species">
                 <div className = "species-container">
@@ -18,4 +22,4 @@ class Pokeman extends Component{
     } 
 };
 
-export default Pokeman
+export default PokeOne
