@@ -3,9 +3,6 @@ import PokeForm from './components/PokeForm'
 import superagent from 'superagent';
 import './App.css';
 
-// const Pokedex = require('pokeapi-js-wrapper');
-// const P = new Pokedex.Pokedex();
-
 const API_URL = 'https://pokeapi.co/api/v2'
 //build hello world
 //render compenents here
@@ -14,7 +11,9 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state= {
-      pokeman: [],
+      pokemonLookup: {}, //results of all poke on all api call
+      pokemonSelect: null, //stores details of selected poke for display
+      pokemonNameError:'',
     }
   }
 
@@ -23,16 +22,35 @@ class App extends Component {
     console.log('HIT API')
     superagent.get(`${API_URL}/pokemon/`)
     .then(res => {
-      console.log('res.body', res.body)
+      //resuls in an array of indiv poke objects - not searchable
+      //so, reduce array to 1 object of poke name : url - searchable
+      let pokemonLookup = res.body.results.reduce((lookup, next) => {
+        lookup[next.name] = next.url;
+        return lookup
+      }, {})
+      console.log('pokemonLookup', res.body.results, pokemonLookup)
+      this.setState({pokemonLookup: res.body.results})
     })
-    .catch(console.log('console.err', console.error))
+    .catch('console.err', console.error)
+  }
+
+  selectPokemon(name){
+    if(!this.pokemonLookup(name)){
+      this.setState({
+        pokemonSelect: null,
+        pokemonNameError: name,
+      })
+    } else{
+
+    }
   }
 
   render(){
     return(
       <div>
         <h1> PokeDex! </h1>
-        <PokeForm/>
+        <PokeForm pokemonSelect={this.pokemonSelect}/>
+        <p> pokemon name error: {this.state.pokemonNameError} </p>
         </div>
     );
   }

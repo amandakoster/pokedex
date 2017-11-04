@@ -21,7 +21,9 @@ class PokeForm extends Component {
             // fetched: false,
             // loading: false,
         };
+
         this.handelPokeNameChange = this.handelPokeNameChange.bind(this)
+        this.handelSubmit = this.handelSubmit.bind(this)
     }
 
     //renders value of input ie pokemon name
@@ -29,26 +31,15 @@ class PokeForm extends Component {
         this.setState({pokeName: e.target.value})
     }
 
-//     componentDidMount(){
-//         this.setState({
-//             loading: true,
-//             pokeName: ''
-//         });
-
-//         fetch('http://pokeapi.co/api/v2/pokemon?limit=50')
-//         .then(res => {
-//             this.setState({
-        
-//             species: res.results,
-//             fetched: true,
-//             loading: true,
-//             });
-//         });
-// };
+    handelSubmit(e) {
+        e.preventDefault()
+        this.props.selectPokemon(this.state.pokeName)
+    }
 
     render(){
         return(
-    <form>
+    <form onSubmit={this.handleSubmit}>
+    
         <input 
         type='text'
         name ='pokemonName'
@@ -61,8 +52,6 @@ class PokeForm extends Component {
         <p> {this.state.pokeName} </p>
 
     </form>
-
-
         );
     }
 }
