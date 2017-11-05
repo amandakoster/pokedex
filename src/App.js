@@ -1,22 +1,27 @@
 import React, { Component } from 'react';
 import PokeForm from './components/PokeForm'
 import superagent from 'superagent';
-import './App.css';
 
 const API_URL = 'https://pokeapi.co/api/v2'
-//build hello world
-//render compenents here
 
 class App extends Component {
   constructor(props){
     super(props);
-    this.state= {
-      pokemonLookup: {}, //results of all poke on all api call
-      pokemonSelect: null, //stores details of selected poke for display
-      pokemonNameError:'',
+    this.state = {
+      pokemonLookup: {},
+      pokemonSelected: null,
+      pokemonNameError: null,
     }
+
+    this.pokemonSelect = this.pokemonSelect.bind(this)
+  }
+  // called evertime the state is changed
+
+  componentWillUpdate(){
+    console.log('___STATE___', this.state)
   }
 
+  
   //lifecycle hook w promises: gets called once before app mounts/or added to DOM
   componentDidMount() {
     console.log('HIT API')
@@ -34,14 +39,27 @@ class App extends Component {
     .catch('console.err', console.error)
   }
 
-  selectPokemon(name){
-    if(!this.pokemonLookup(name)){
+  pokemonSelect(name){
+    console.log('cool beans')
+    if(!this.state.pokemonLookup[name]){
+      // do something on state that enables the 
+      // view to show an error that that pokemon does not exist
       this.setState({
-        pokemonSelect: null,
+        pokemonSelected: null,
         pokemonNameError: name,
       })
-    } else{
-
+    } else {
+      // make a request to the pokemon api and do something on 
+      // state to store the pokemons details to be desplayed to the user
+      superagent.get(this.state.pokemonLookup[name])
+      .then(res => {
+        console.log('selected pokemon', res.body)
+        this.setState({
+          pokemonSelected: res.body,
+          pokemonNameError: null,
+        })
+      })
+      .catch(console.error)
     }
   }
 
