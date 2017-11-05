@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       pokemonLookup: {},
-      pokemonSelected: null,
+      pokemonSelected: '',
       pokemonNameError: null,
     }
 
@@ -17,30 +17,44 @@ class App extends Component {
   }
   // called evertime the state is changed
 
-  componentWillUpdate(){
+  componentDidUpdate(){
     console.log('___STATE___', this.state)
   }
 
   
   //lifecycle hook w promises: gets called once before app mounts/or added to DOM
-  componentDidMount() {
+  componentDidMount(){
     console.log('HIT API')
-    superagent.get(`${API_URL}/pokemon/`)
-    .then(res => {
-      //resuls in an array of indiv poke objects - not searchable
-      //so, reduce array to 1 object of poke name : url - searchable
-      let pokemonLookup = res.body.results.reduce((lookup, next) => {
-        lookup[next.name] = next.url;
-        return lookup
-      }, {})
-      console.log('pokemonLookup', res.body.results, pokemonLookup)
-      this.setState({pokemonLookup: res.body.results})
-    })
-    .catch('console.err', console.error)
+    if(localStorage.pokemonLookup){
+      try {
+        let pokemonLookup = JSON.parse(localStorage.pokemonLookup)
+        this.setState({pokemonLookup})
+      } catch(err) {
+        console.log(err)
+      }
+    } else {
+      superagent.get(`${API_URL}/pokemon/`)
+      .then(res => {
+
+        let pokemonLookup = res.body.results.reduce((lookup, next) => {
+          lookup[next.name] = next.url;
+          return lookup
+        }, {})
+
+        try {
+          localStorage.pokemonLookup = JSON.stringify(pokemonLookup)
+          this.setState({pokemonLookup})
+        } catch (err) {
+          console.error(err)
+        }
+      })
+      .catch(console.error)
+    }
+
   }
 
   pokemonSelect(name){
-    console.log('cool beans')
+    console.log('HIT API')
     if(!this.state.pokemonLookup[name]){
       // do something on state that enables the 
       // view to show an error that that pokemon does not exist
@@ -64,13 +78,25 @@ class App extends Component {
   }
 
   render(){
-    return(
+    return (
       <div>
-        <h1> PokeDex! </h1>
-        <PokeForm pokemonSelect={this.pokemonSelect}/>
-        <p> pokemon name error: {this.state.pokemonNameError} </p>
-        </div>
-    );
+        <h1> PokeDex </h1>
+
+        <PokeForm pokemonSelect={this.pokemonSelect} />
+
+        { this.state.pokemonNameError ? 
+        
+          <div> 
+            <h2> pokemon {this.state.pokemonNameError} does not exist </h2>
+            <p> make another request ! </p>
+          </div> :
+
+          <div>
+              <h2> selected {this.state.pokemonSelected.name} </h2>
+              </div>
+          }
+      </div>
+    )
   }
 }
 
