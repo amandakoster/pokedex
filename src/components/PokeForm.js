@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import superagent from 'superagent'
 
 //create inputs with: onChange and value (controlled inputs)
 //bind inputs to state
@@ -14,38 +13,36 @@ import React, { Component } from 'react';
 
 class PokeForm extends Component {
     constructor(props){
+        //pass props into super adds props to current context
         super(props);
         this.state= {
             pokeName: '',
-            // species: [],
-            // fetched: false,
-            // loading: false,
-        };
+        }
 
-        this.handelPokeNameChange = this.handelPokeNameChange.bind(this)
-        this.handelSubmit = this.handelSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handlePokeNameChange = this.handlePokeNameChange.bind(this)
     }
 
-    //renders value of input ie pokemon name
-    handelPokeNameChange(e) {
+    //renders value of input (pokemon name)
+    handlePokeNameChange(e) {
         this.setState({pokeName: e.target.value})
     }
 
-    handelSubmit(e) {
+    handleSubmit(e) {
         e.preventDefault()
-        this.props.selectPokemon(this.state.pokeName)
+        this.props.pokemonSelect(this.state.pokeName)
     }
 
     render(){
         return(
-    <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
     
         <input 
         type='text'
         name ='pokemonName'
         placeholder='poke name'
-        onChange={this.handelPokeNameChange}
         value={this.state.pokeName}
+        onChange={this.handlePokeNameChange}
         />
 
         <p> pokeName: </p>
