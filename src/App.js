@@ -25,33 +25,20 @@ class App extends Component {
   //lifecycle hook w promises: gets called once before app mounts/or added to DOM
   componentDidMount(){
     console.log('HIT API')
-    if(localStorage.pokemonLookup){
-      try {
-        let pokemonLookup = JSON.parse(localStorage.pokemonLookup)
-        this.setState({pokemonLookup})
-      } catch(err) {
-        console.log(err)
-      }
-    } else {
-      superagent.get(`${API_URL}/pokemon/`)
+ superagent.get(`${API_URL}/pokemon/`)
       .then(res => {
-
         let pokemonLookup = res.body.results.reduce((lookup, next) => {
           lookup[next.name] = next.url;
           return lookup
         }, {})
-
         try {
-          localStorage.pokemonLookup = JSON.stringify(pokemonLookup)
           this.setState({pokemonLookup})
         } catch (err) {
           console.error(err)
         }
       })
-      .catch(console.error)
+ 
     }
-
-  }
 
   pokemonSelect(name){
     console.log('HIT API')
@@ -80,21 +67,36 @@ class App extends Component {
   render(){
     return (
       <div>
-        <h1> PokeDex </h1>
+        <h1> form demo </h1>
 
         <PokeForm pokemonSelect={this.pokemonSelect} />
 
         { this.state.pokemonNameError ? 
-        
           <div> 
             <h2> pokemon {this.state.pokemonNameError} does not exist </h2>
             <p> make another request ! </p>
           </div> :
-
           <div>
-              <h2> selected {this.state.pokemonSelected.name} </h2>
-              </div>
+          { this.state.pokemonSelected ? 
+            <div> 
+              <h2> PokeMon Name: {this.state.pokemonSelected.name} </h2>
+              <h3> Abilities: </h3>
+              <ul>
+                {this.state.pokemonSelected.abilities.map((item, i) => {
+                  return (
+                    <li key={i}>
+                      <p> {item.ability.name} </p>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div> : 
+            <div> 
+              <p> make a request </p>
+            </div>
           }
+          </div>
+        }
       </div>
     )
   }
