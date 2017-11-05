@@ -33,9 +33,9 @@ class PokeForm extends Component {
         this.props.pokemonSelect(this.state.pokeName)
     }
 
-    render(){
-        return(
-        <form onSubmit={this.handleSubmit}>
+render(){
+    return(
+    <form onSubmit={this.handleSubmit}>
     
         <input 
         type='text'
@@ -44,9 +44,6 @@ class PokeForm extends Component {
         value={this.state.pokeName}
         onChange={this.handlePokeNameChange}
         />
-
-        <p> pokeName: </p>
-        <p> {this.state.pokeName} </p>
 
     </form>
         );

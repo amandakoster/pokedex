@@ -67,19 +67,20 @@ class App extends Component {
   render(){
     return (
       <div>
-        <h1> form demo </h1>
-
+        <h1> PokeDex </h1>
+        <h2> Search : 
         <PokeForm pokemonSelect={this.pokemonSelect} />
+        </h2>
 
         { this.state.pokemonNameError ? 
           <div> 
-            <h2> pokemon {this.state.pokemonNameError} does not exist </h2>
-            <p> make another request ! </p>
+            <h2> Ooops, pokemon {this.state.pokemonNameError} does not exist. </h2>
+            <p> Search again! </p>
           </div> :
           <div>
           { this.state.pokemonSelected ? 
             <div> 
-              <h2> PokeMon Name: {this.state.pokemonSelected.name} </h2>
+              <h2>{this.state.pokemonSelected.name} </h2>
               <h3> Abilities: </h3>
               <ul>
                 {this.state.pokemonSelected.abilities.map((item, i) => {
@@ -92,7 +93,7 @@ class App extends Component {
               </ul>
             </div> : 
             <div> 
-              <p> make a request </p>
+              <p> Search for  a PokeMon. </p>
             </div>
           }
           </div>
