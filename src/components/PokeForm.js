@@ -44,10 +44,7 @@ class PokeForm extends Component {
         value={this.state.pokeName}
         onChange={this.handlePokeNameChange}
         />
-
-        <p> pokeName: </p>
-        <p> {this.state.pokeName} </p>
-
+        
     </form>
         );
     }
