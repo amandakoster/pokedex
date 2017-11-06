@@ -24,3 +24,13 @@
 //   );
   
 //   export default PokeGrid;
+
+<ul>
+{this.state.pokemonList.map((item, i) => {
+  return (
+    <li key={i}>
+      <p> {item.id} </p>
+    </li>
+  )
+})}
+</ul>
