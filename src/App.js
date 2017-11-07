@@ -120,7 +120,7 @@ class App extends Component {
                   return (
                     <li className="sprite" key={i}>
                       <img src={item.sprites.front_default} alt={"Pokemon sprite"} />
-                      <span key={i} alt={"Pokemon name"}>{item.name}</span>
+                      <li className="poke-list-name" key={i} alt={"Pokemon name"}>{item.name}</li>
                     </li>
                         )
                       })}
