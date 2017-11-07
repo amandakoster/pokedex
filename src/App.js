@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PokeForm from './components/PokeForm'
 import superagent from 'superagent';
+import './App.css'
 
 const API_URL = 'https://pokeapi.co/api/v2'
 
@@ -11,33 +12,41 @@ class App extends Component {
       pokemonLookup: {},
       pokemonSelected: '',
       pokemonNameError: null,
+      pokemonList: [],
     }
 
     this.pokemonSelect = this.pokemonSelect.bind(this)
   }
-  // called evertime the state is changed
 
   componentDidUpdate(){
     console.log('___STATE___', this.state)
   }
-
   
   //lifecycle hook w promises: gets called once before app mounts/or added to DOM
   componentDidMount(){
-    console.log('HIT API')
+    let context = this
+    //reassined this to context because the functions with callbacks e .map, .then. reduce overwrote the 'this' context
  superagent.get(`${API_URL}/pokemon/`)
       .then(res => {
+        let pokemonList = []
         let pokemonLookup = res.body.results.reduce((lookup, next) => {
           lookup[next.name] = next.url;
           return lookup
-        }, {})
+        }, {});
+
+    res.body.results.map(function(poke) {
+    superagent.get(poke.url)
+    .then(res => {
+      pokemonList.push(res.body) 
+      context.setState({pokemonList})
+    })
+  });
         try {
-          this.setState({pokemonLookup})
+          this.setState({pokemonLookup, pokemonList})
         } catch (err) {
           console.error(err)
         }
       })
- 
     }
 
   pokemonSelect(name){
@@ -66,23 +75,26 @@ class App extends Component {
 
   render(){
     return (
+      <div className="app">
+        <h1> Poke Dex </h1>
+        <PokeForm className="pokeForm" pokemonSelect={this.pokemonSelect} />
       <div>
-        <h1> PokeDex </h1>
-        <h2> Search : 
-        <PokeForm pokemonSelect={this.pokemonSelect} />
-        </h2>
+
 
         { this.state.pokemonNameError ? 
           <div> 
-            <h2> Ooops, pokemon {this.state.pokemonNameError} does not exist. </h2>
-            <p> Search again! </p>
+            <h2> {this.state.pokemonNameError} is not a valid Pokemon. </h2>
+            <p> Try again! </p>
+
           </div> :
           <div>
           { this.state.pokemonSelected ? 
             <div> 
-              <h2>{this.state.pokemonSelected.name} </h2>
+
+              <h2> {this.state.pokemonSelected.name} </h2>
+
               <h3> Abilities: </h3>
-              <ul>
+              <ul className="abilities-list">
                 {this.state.pokemonSelected.abilities.map((item, i) => {
                   return (
                     <li key={i}>
@@ -93,11 +105,29 @@ class App extends Component {
               </ul>
             </div> : 
             <div> 
-              <p> Search for  a PokeMon. </p>
+
+              <p> Search for a Pokemon! </p>
+
             </div>
           }
           </div>
         }
+        </div>
+
+            <div className="pokemonlist-container">
+            <ul className="poke-list">
+                {this.state.pokemonList.map((item, i) => {
+                  return (
+                    <li className="sprite" key={i}>
+                      <img src={item.sprites.front_default} alt={"Pokemon sprite"} />
+                      <span key={i} alt={"Pokemon name"}>{item.name}</span>
+                    </li>
+                        )
+                      })}
+                      
+      
+              </ul>
+            </div>
       </div>
     )
   }
