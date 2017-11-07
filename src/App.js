@@ -80,15 +80,19 @@ class App extends Component {
         <PokeForm className="pokeForm" pokemonSelect={this.pokemonSelect} />
       <div>
 
+
         { this.state.pokemonNameError ? 
           <div> 
             <h2> {this.state.pokemonNameError} is not a valid Pokemon. </h2>
             <p> Try again! </p>
+
           </div> :
           <div>
           { this.state.pokemonSelected ? 
             <div> 
+
               <h2> {this.state.pokemonSelected.name} </h2>
+
               <h3> Abilities: </h3>
               <ul className="abilities-list">
                 {this.state.pokemonSelected.abilities.map((item, i) => {
@@ -101,7 +105,9 @@ class App extends Component {
               </ul>
             </div> : 
             <div> 
+
               <p> Search for a Pokemon! </p>
+
             </div>
           }
           </div>
