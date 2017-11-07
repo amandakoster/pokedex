@@ -74,8 +74,6 @@ class App extends Component {
   }
 
   render(){
-    console.log(this.state.pokemonSelected, '**pokemonselected**')
-    console.log(this.state.pokemonList, '**this.state.pokemonList**')
     return (
       <div className="app">
         <h1> Poke Dex </h1>
@@ -115,16 +113,13 @@ class App extends Component {
                 {this.state.pokemonList.map((item, i) => {
                   return (
                     <li className="sprite" key={i}>
-                      <img src={item.sprites.front_default} /> 
+                      <img src={item.sprites.front_default} alt={"Pokemon sprite"} />
+                      <span key={i} alt={"Pokemon name"}>{item.name}</span>
                     </li>
                         )
                       })}
                       
-                {this.state.pokemonList.map((item, i) => {
-                  return (
-                    <li key={i}>{item.name}</li>
-                  )
-                })}
+      
               </ul>
             </div>
       </div>

@@ -32,13 +32,15 @@
   border-radius: 10px;
   margin: 5px;
   float: left;
+  height: 20%;
 }
 
 .pokemonlist-container {
   border: 1px red solid;
 }
 
-/* .poke-list {
-  width: 5em;
-} */
-
+span {
+  float: right;
+  padding-top: 5%;
+  padding-right: 1%;
+}
