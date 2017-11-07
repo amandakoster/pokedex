@@ -110,11 +110,11 @@ class App extends Component {
 
             <div className="pokemonlist-container">
             <ul className="poke-list">
-                {this.state.pokemonList.map((item, i, j) => {
+                {this.state.pokemonList.map((item, i) => {
                   return (
                     <li className="sprite" key={i}>
                       <img src={item.sprites.front_default} alt={"Pokemon sprite"} />
-                      <li key={i} alt={"Pokemon name"}>{item.name}</li>
+                      <li className="poke-list-name" key={i} alt={"Pokemon name"}>{item.name}</li>
                     </li>
                         )
                       })}

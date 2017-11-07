@@ -31,12 +31,13 @@
   float: left;
 }
 
-.pokemonlist-container {
+/* .pokemonlist-container {
   border: 1px red solid;
-}
-
-/* .poke-list {
-  width: 5em;
-  float: left;
 } */
+
+.poke-list-name {
+  width: 5em;
+  padding-left: 0.25em;
+  /* float: left; */
+}
 
