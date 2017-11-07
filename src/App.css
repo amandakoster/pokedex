@@ -16,15 +16,12 @@
 
 .poke-list {
   list-style: none;
-  display: block;
-  list-style-type:none;
-  float: left;
 }
 
 .abilities-list {
   list-style: none;
   display: block;
-  list-style-type:none;
+
 }
 
 .sprite {
@@ -32,15 +29,14 @@
   border-radius: 10px;
   margin: 5px;
   float: left;
-  height: 20%;
 }
 
 .pokemonlist-container {
   border: 1px red solid;
 }
 
-span {
-  float: right;
-  padding-top: 5%;
-  padding-right: 1%;
-}
+/* .poke-list {
+  width: 5em;
+  float: left;
+} */
+
