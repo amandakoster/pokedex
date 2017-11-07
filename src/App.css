@@ -1,28 +1,44 @@
-.App {
-  text-align: center;
+/* .App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 650px;
+  height: 400px;
+  padding-left: 10px;
+  margin: 50px auto;
+  background-color: #FE0065;
+  border-radius: 10px;
+} */
+
+/* .poke-list {
+
+} */
+
+.poke-list {
+  list-style: none;
+  display: block;
+  list-style-type:none;
+  float: left;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.abilities-list {
+  list-style: none;
+  display: block;
+  list-style-type:none;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.sprite {
+  border: 1px black solid;
+  border-radius: 10px;
+  margin: 5px;
+  float: left;
 }
 
-.App-title {
-  font-size: 1.5em;
+.pokemonlist-container {
+  border: 1px red solid;
 }
 
-.App-intro {
-  font-size: large;
-}
+/* .poke-list {
+  width: 5em;
+} */
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
