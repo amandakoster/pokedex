@@ -5,6 +5,17 @@ import './App.css'
 
 const API_URL = 'https://pokeapi.co/api/v2'
 
+// var config = {
+//   apiKey: "AIzaSyCPsnpDiLeJQgUPai2bl-n8ZysvpyZoMjw",
+//   authDomain: "zom-sea-wages.firebaseapp.com",
+//   databaseURL: "https://zom-sea-wages.firebaseio.com",
+//   projectId: "zom-sea-wages",
+//   storageBucket: "zom-sea-wages.appspot.com",
+//   messagingSenderId: "682282316330"
+// };
+// firebase.initializeApp(config);
+
+
 class App extends Component {
   constructor(props){
     super(props);
