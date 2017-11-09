@@ -1,1 +1,5 @@
-{}
+{
+  "projects": {
+    "default": "pokedex-f2167"
+  }
+}

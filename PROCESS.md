@@ -6,3 +6,12 @@
 4. pseudo code the tasks into the scaffolding
 5. create anticipated files for component that will build th eapp, psuedo code for each component
 5. read about how the API works
+Added search form
+    search for 1 poke, show prop (abilities)
+Added 2nd API call for all poke (limit = ~20)
+Mapped thorugh the data
+rendred poke on teh page
+styed a bit
+deploy to firebase
+
+IF r
