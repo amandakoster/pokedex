@@ -3,9 +3,6 @@ Create a simple single page site that will allow users to find and explore conte
 come from one of the following API sources (pick 1)
 
 * Pokemon Monsters - https://pokeapi.co/
-* Star Wars Characters - https://swapi.co/
-* Spotify Albums, Songs or Artists - https://developer.spotify.com/web-api/
-* Requires registration and an API key
 
 ### Using one of these APIs:
 * implement the provided wireframe layout, 
