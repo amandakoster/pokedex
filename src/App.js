@@ -63,7 +63,7 @@ class App extends Component {
       // state to store the pokemons details to be desplayed to the user
       superagent.get(this.state.pokemonLookup[name])
       .then(res => {
-        console.log('selected pokemon', res.body)
+        // console.log('selected pokemon', res.body)
         this.setState({
           pokemonSelected: res.body,
           pokemonNameError: null,
