@@ -38,7 +38,7 @@ class App extends Component {
     superagent.get(poke.url)
     .then(res => {
       pokemonList.push(res.body) 
-      context.setState({pokemonList})
+      context.setState({pokemonList})      
     })
   });
         try {
