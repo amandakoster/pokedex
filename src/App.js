@@ -85,8 +85,8 @@ class App extends Component {
       <div>
         { this.state.pokemonNameError ? 
           <div> 
-            <h5> {this.state.pokemonNameError} is not a valid Pokemon. </h5>
-            <p> Try again! </p>
+            <p>{this.state.pokemonNameError} is not a valid Pokemon :(</p>
+            <p>Try again!</p>
 
           </div> :
           <div>
@@ -100,14 +100,15 @@ class App extends Component {
                 {this.state.pokemonSelected.abilities.map((item, i) => {
                   return (
                     <li key={i}>
-                      <p> {item.ability.name} </p>
+                      <p> {item.ability.name} :)</p>
                     </li>
                   )
                 })}
               </ul>
             </div> : 
             <div> 
-              <p> Search for a Pokemon's Abilites! (please wait for me to load)</p>
+              <p>Search a Pokemon's Abilites!</p>
+              <p>(please wait for me to load)</p>
             </div>
           }
           </div>
