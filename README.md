@@ -3,11 +3,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
+<<<<<<< HEAD
 - [Folder Structure](#folder-structure)
+=======
+## Table of Contents
+
+
+>>>>>>> b270c84429816f6e2d28f18c29bfb5015d1065a6
 - [Available Scripts](#available-scripts)
   - [npm start](#npm-start)
   - [npm test](#npm-test)
   - [npm run build](#npm-run-build)
+<<<<<<< HEAD
 
 In most cases bumping the `react-scripts` version in `package.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) for potential breaking changes.
 
@@ -76,3 +83,7 @@ See the section about [deployment](#deployment) for more information.
 
 
 
+=======
+  - [npm run eject](#npm-run-eject)
+-
+>>>>>>> b270c84429816f6e2d28f18c29bfb5015d1065a6
