@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PokeForm from './components/PokeForm'
 import superagent from 'superagent';
 import './App.css'
+import Header from './components/Header';
 
 const API_URL = 'https://pokeapi.co/api/v2'
 
@@ -76,14 +77,15 @@ class App extends Component {
   render(){
     return (
       <div className="app">
-        <h1> Poke Dex </h1>
-        <PokeForm className="pokeForm" pokemonSelect={this.pokemonSelect} />
+        <Header className="header"/>
+
+       <div className="header-content">   
+        <h1 className="poke-dex"> Poke Dex </h1>
+        <PokeForm className="poke-form" pokemonSelect={this.pokemonSelect} />
       <div>
-
-
         { this.state.pokemonNameError ? 
           <div> 
-            <h2> {this.state.pokemonNameError} is not a valid Pokemon. </h2>
+            <h5> {this.state.pokemonNameError} is not a valid Pokemon. </h5>
             <p> Try again! </p>
 
           </div> :
@@ -93,7 +95,7 @@ class App extends Component {
 
               <h2> {this.state.pokemonSelected.name} </h2>
 
-              <h3> Abilities: </h3>
+              <h5> Abilities: </h5>
               <ul className="abilities-list">
                 {this.state.pokemonSelected.abilities.map((item, i) => {
                   return (
@@ -105,14 +107,14 @@ class App extends Component {
               </ul>
             </div> : 
             <div> 
-
-              <p> Search for a Pokemon! </p>
-
+              <p> Search for a Pokemon's Abilites! (please wait for me to load)</p>
             </div>
           }
           </div>
         }
         </div>
+        </div>
+
 
             <div className="pokemonlist-container">
             <ul className="poke-list">

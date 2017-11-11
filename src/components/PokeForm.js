@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './pokeform.css';
 
 //create inputs with: onChange and value (controlled inputs)
 //bind inputs to state
@@ -9,7 +10,6 @@ import React, { Component } from 'react';
 //display a list of PokeOne componentes
 //include a name, a link (external) to more information 
 //and any information you see fit
-
 
 class PokeForm extends Component {
     constructor(props){
