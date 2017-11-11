@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald");
 
+
+h1 {
+  margin-bottom: 5px;
+  font-size: calc(4vw + 4vh + 5vmin);
+}
+
 .poke-list {
   list-style: none;
 }
@@ -12,13 +18,13 @@
 .poke-dex {
   color: #000;
   font-family: 'Oswald', sans-serif;
-  font-style: bold;
-  size: 500px;
-  /* font-weight: 700; */
+  font-style: normale;
+  font-weight: 700;
 }
 .sprite {
   border: 1px #000 solid;
   border-radius: 10px;
+  padding: 10px;
   margin: 5px;
   float: left;
 }
@@ -36,6 +42,7 @@
   position: absolute;
   left: 0px;
   top: 0px;
+  margin-left: 5px;
 }
 
 
