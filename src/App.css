@@ -1,18 +1,4 @@
-/* .App {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 650px;
-  height: 400px;
-  padding-left: 10px;
-  margin: 50px auto;
-  background-color: #FE0065;
-  border-radius: 10px;
-} */
-
-/* .poke-list {
-
-} */
+@import url("https://fonts.googleapis.com/css?family=Oswald");
 
 .poke-list {
   list-style: none;
@@ -21,23 +7,35 @@
 .abilities-list {
   list-style: none;
   display: block;
-
 }
 
+.poke-dex {
+  color: #000;
+  font-family: 'Oswald', sans-serif;
+  font-style: bold;
+  size: 500px;
+  /* font-weight: 700; */
+}
 .sprite {
-  border: 1px black solid;
+  border: 1px #000 solid;
   border-radius: 10px;
   margin: 5px;
   float: left;
 }
 
-/* .pokemonlist-container {
-  border: 1px red solid;
-} */
-
 .poke-list-name {
   width: 5em;
   padding-left: 0.25em;
-  /* float: left; */
 }
+
+.header {
+  z-index: -1;
+}
+
+.header-content {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
 
