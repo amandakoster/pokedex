@@ -3,7 +3,7 @@ Welcome to my first ever PokeDex! This is a simple single page site where users 
 
 ### Delivery:
 * How to access the code for the project:
-    - clone pulic GitHub repo
+    - clone public GitHub repo
     - cd into the directory
     - run [npm start] in your terminal
 * Github repository (public) preferred though not required: 
