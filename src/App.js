@@ -23,19 +23,26 @@ class App extends Component {
     console.log('___STATE___', this.state)
   }
   
-  //lifecycle hook w promises: gets called once before app mounts/or added to DOM
+//lifecycle hook w promises: gets called once before app mounts/or added to DOM
   componentDidMount(){
     let context = this
-    //reassined this to context because the functions with callbacks e .map, .then. reduce overwrote the 'this' context
+//reassigned this to context because the functions with callbacks e .map, .then .reduce arrow funtions return 
+//overwrote 'this' as context
+
+    //first API call to get pokemon names:url
  superagent.get(`${API_URL}/pokemon/`)
       .then(res => {
         let pokemonList = []
+
+//reduce results to object so they are easier to search
         let pokemonLookup = res.body.results.reduce((lookup, next) => {
           lookup[next.name] = next.url;
           return lookup
         }, {});
 
     res.body.results.map(function(poke) {
+
+//2nd API call to get the data from each pokemans url
     superagent.get(poke.url)
     .then(res => {
       pokemonList.push(res.body) 
@@ -64,7 +71,6 @@ class App extends Component {
       // state to store the pokemons details to be desplayed to the user
       superagent.get(this.state.pokemonLookup[name])
       .then(res => {
-        // console.log('selected pokemon', res.body)
         this.setState({
           pokemonSelected: res.body,
           pokemonNameError: null,
@@ -73,7 +79,6 @@ class App extends Component {
       .catch(console.error)
     }
   }
-
   render(){
     return (
       <div className="app">
@@ -82,6 +87,7 @@ class App extends Component {
        <div className="header-content">   
         <h1 className="poke-dex"> Poke Dex </h1>
         <PokeForm className="poke-form" pokemonSelect={this.pokemonSelect} />
+
       <div>
         { this.state.pokemonNameError ? 
           <div> 
@@ -108,14 +114,13 @@ class App extends Component {
             </div> : 
             <div> 
               <p>Search a Pokemon's Abilites!</p>
-              <p>(please wait for me to load)</p>
+              <p>(I'm slow... please wait for me to load)</p>
             </div>
           }
           </div>
         }
         </div>
         </div>
-
 
             <div className="pokemonlist-container">
             <ul className="poke-list">

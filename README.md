@@ -1,27 +1,48 @@
 # PokeDex
-Welome to my first ever PokeDex! I spoek up to 6 hours on this project. Below you will find npm commands to run the code locally, a link to the deployed site on Heroku and a link to the repo on GitHub. Given more time I would add the following features:
+Welcome to my first ever PokeDex! I sent ~ 6 hours on this project. Below you will find npm commands to run the code locally, a link to the deployed site on Heroku and a link to the repo on GitHub. Given more time I would add the following: 
 
-* list 2-3 characteristics for each Pokemon 'card'
-* ways to filter these characteristics 
-* upon searching a POkemon, have an image of hte POkeman apepar along with it's abilits or other characterits
-* clickable 'cards' that link to a detail page for each Pokemon
-* modify the design to accomodate this additional data
+### Functionality:
+* refactor 2 API calls into 1 for speed.
+* refactor App.js functionality into separate components. There is a lot of functionality in the App.js, not allowing for reusable components which is a benefit of React.js
+* incorporate provided Pokeman API library, may have saved time.
+* keep playing with this!
 
-## A simple single page site that will allow users to find and explore content. The data for the site should
-come from one of the following API sources: Pokemon API
+### Features:
+* list up 3 characteristics for each Pokemon 'card'
+* add ways to filter these characteristics in the header
+* upon searching a Pokemon, have an image of the Pokemon appear along with its abilities or other characteristics
+* clickable, animated 'cards' that link to a detail page for each Pokemon
+* modify the design to accommodate this additional data
+
+### A simple single page site that will allow users to find and explore content from the Pokemon API, https://pokeapi.co/
 
 ### Delivery:
 * A way to access the code for the project:
-    - [npm start](#npm-start)
-* Github repository (private or public) preferred though not required: 
+    - [npm start]
+* Github repository (public) preferred though not required: 
     - https://github.com/amandakoster/blink-api
 * URL to view a live version of the site:
     - https://amanda-pokedex.herokuapp.com/
 
+### Process
+* build generic scaffold: npm create-react-app
+* create GH repo, push scaffold to GH repo
+* organize scope: put scope into .md file and break out project into tasks
+* pseudo code the tasks into the scaffolding
+* create anticipated files for component that will build the app, pseudo code for each component
+* read about how the API works
+* Added search form
+* search for 1 poke, show prop (abilities)
+* Added 2nd API call for all poke (limit = ~20)
+* Mapped through the data
+* rendered poke on the page
+* styled a bit
+* deploy to firebase or gh pages: didn't work because node_modules are in .gitignore
+* deployed to Heroku
+
 ### Bonus tasks:
 * Make the interface responsive: DONE
 * Flourishes or niceties in the design (e.g. animations for search results) : minor
-* Additional search or filtering features
 * Detailed modal popup for an item
 * A mind for accessibility: DONE (alt text, Contrast Ratio 16.26:1, appropriate html tags)
 * Include a test plan and user tests: minor, there is a scaffolding for testing
@@ -48,3 +69,4 @@ come from one of the following API sources: Pokemon API
 * Clean HTML, CSS and Javascript code
 * Good use and understanding of your chosen libraries and frameworks
 * Nice design
+
