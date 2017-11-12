@@ -50,8 +50,8 @@ Welcome to my first ever PokeDex! This is a simple single page site where users 
 * keep playing with this!
 
 ##### Features:
-* List up 3 characteristics for each Pokemon 'card'
-* Add ways to filter these characteristics in the header
+* List 3 characteristics for each Pokemon 'card'
+* Add ways to filter these 3 characteristics in the header
 * Upon searching a Pokemon, have an image of the Pokemon appear along with its abilities or other characteristics
 * Clickable, animated 'cards' that link to a detail page for each Pokemon
 * Modify the design to accommodate this additional data
