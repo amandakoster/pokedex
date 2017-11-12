@@ -42,7 +42,7 @@ Welcome to my first ever PokeDex! I spent ~ 6 hours on this project. Below you w
 * select whatever background image you feel fits best for your application.
 * This is your application, and design touches or flourishes are encouraged.
 
-### Given more time I would add the following: 
+### With more time I would add the following: 
 
 #### Functionality:
 * refactor 2 API calls into 1 for speed.
