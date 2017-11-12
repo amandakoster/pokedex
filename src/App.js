@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PokeForm from './components/PokeForm'
 import superagent from 'superagent';
-import './App.css'
 import Header from './components/Header';
+import './App.css'
 
 const API_URL = 'https://pokeapi.co/api/v2'
 
