@@ -2,8 +2,10 @@
 Welcome to my first ever PokeDex! This is a simple single page site where users can find and explore content from the Pokemon API, https://pokeapi.co/. I spent ~ 6 hours on this project. Below you will find npm commands to run the code locally, a link to the deployed site on Heroku and a link to the repo on GitHub. 
 
 ### Delivery:
-* A way to access the code for the project:
-    - [npm start]
+* How to access the code for the project:
+    - clone pulic GitHub repo
+    - cd into the directory
+    - run [npm start] in your terminal
 * Github repository (public) preferred though not required: 
     - https://github.com/amandakoster/blink-api
 * URL to view a live version of the site:
