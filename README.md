@@ -29,9 +29,9 @@ Welcome to my first ever PokeDex! This is a simple single page site where users 
 
 ### Bonus tasks:
 * Make the interface responsive: DONE
-* Flourishes or niceties in the design (e.g. animations for search results) : minor
+* Flourishes or niceties in the design (e.g. animations for search results) : minor - search bar glows blue
 * Detailed modal popup for an item
-* A mind for accessibility: DONE (alt text, Contrast Ratio 16.26:1, appropriate html tags)
+* A mind for accessibility: DONE (alt text for images, Contrast Ratio of 16.26:1, appropriate html tags)
 * Include a test plan and user tests: minor, there is a scaffolding for testing
 
 ### Using one of these APIs:
