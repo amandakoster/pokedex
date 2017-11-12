@@ -3,9 +3,11 @@ Welcome to my first ever PokeDex! This is a simple single page site where users 
 
 ### Delivery:
 * How to access the code for the project:
-    - clone public GitHub repo
-    - cd into the directory
-    - run [npm start] in your terminal
+   - clone public GitHub repo
+   - cd into the local directory
+   - run [npm init] and [npm install] in your terminal to install dependencies and node_moduels
+   - run [npm start] in your terminal
+    - app will run on localhost:3000
 * Github repository (public) preferred though not required: 
     - https://github.com/amandakoster/blink-api
 * URL to view a live version of the site:
