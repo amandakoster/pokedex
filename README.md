@@ -1,18 +1,5 @@
 # PokeDex
-Welcome to my first ever PokeDex! I sent ~ 6 hours on this project. Below you will find npm commands to run the code locally, a link to the deployed site on Heroku and a link to the repo on GitHub. Given more time I would add the following: 
-
-### Functionality:
-* refactor 2 API calls into 1 for speed.
-* refactor App.js functionality into separate components. There is a lot of functionality in the App.js, not allowing for reusable components which is a benefit of React.js
-* incorporate provided Pokeman API library, may have saved time.
-* keep playing with this!
-
-### Features:
-* list up 3 characteristics for each Pokemon 'card'
-* add ways to filter these characteristics in the header
-* upon searching a Pokemon, have an image of the Pokemon appear along with its abilities or other characteristics
-* clickable, animated 'cards' that link to a detail page for each Pokemon
-* modify the design to accommodate this additional data
+Welcome to my first ever PokeDex! I spent ~ 6 hours on this project. Below you will find npm commands to run the code locally, a link to the deployed site on Heroku and a link to the repo on GitHub. 
 
 ### A simple single page site that will allow users to find and explore content from the Pokemon API, https://pokeapi.co/
 
@@ -54,6 +41,21 @@ Welcome to my first ever PokeDex! I sent ~ 6 hours on this project. Below you wi
 * You can title your application
 * select whatever background image you feel fits best for your application.
 * This is your application, and design touches or flourishes are encouraged.
+
+### Given more time I would add the following: 
+
+#### Functionality:
+* refactor 2 API calls into 1 for speed.
+* refactor App.js functionality into separate components. There is a lot of functionality in the App.js, not allowing for reusable components which is a benefit of React.js
+* incorporate provided Pokeman API library, may have saved time.
+* keep playing with this!
+
+#### Features:
+* list up 3 characteristics for each Pokemon 'card'
+* add ways to filter these characteristics in the header
+* upon searching a Pokemon, have an image of the Pokemon appear along with its abilities or other characteristics
+* clickable, animated 'cards' that link to a detail page for each Pokemon
+* modify the design to accommodate this additional data
 
 ### Guidelines:
 * The background on the top section behind the title and search bar is meant to be an image.
