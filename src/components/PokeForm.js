@@ -1,16 +1,6 @@
 import React, { Component } from 'react';
 import './pokeform.css';
 
-//create inputs with: onChange and value (controlled inputs)
-//bind inputs to state
-//render new state based in event to DOM
-//component api call here - fetch data
-//api call with limit to 12 as per wireframe
-
-//display a list of PokeOne componentes
-//include a name, a link (external) to more information 
-//and any information you see fit
-
 class PokeForm extends Component {
     constructor(props){
         //pass props into super adds props to current context

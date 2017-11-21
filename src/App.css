@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Oswald");
+/* @import url("https://fonts.googleapis.com/css?family=Oswald"); */
+/* @import url("https://fontmeme.com/fonts/pokmon-font/"); */
 
 
 h1 {
@@ -15,14 +16,15 @@ h1 {
   display: block;
 }
 
-.poke-dex {
+.title {
   color: #000;
-  font-family: 'Oswald', sans-serif;
-  font-style: normale;
+  font-family: 'Pokemon', sans-serif;
+  font-style: normal;
   font-weight: 700;
 }
 .sprite {
-  border: 1px #000 solid;
+  border: 1px #292929 solid;
+  color: #000;
   border-radius: 10px;
   padding: 10px;
   margin: 5px;
@@ -30,7 +32,7 @@ h1 {
   background-color: #FFFF99;
 }
 
-.poke-list-name {
+.poke-list-name, .poke-list-ability {
   width: 5em;
   padding-left: 0.25em;
 }

@@ -26,7 +26,7 @@ class App extends Component {
 //lifecycle hook w promises: gets called once before app mounts/or added to DOM
   componentDidMount(){
     let context = this
-//reassigned this to context because the functions with callbacks e .map, .then .reduce arrow funtions return 
+//reassigned this to context because the functions with callbacks w .map, .then .reduce arrow funtions return 
 //overwrote 'this' as context
 
     //first API call to get pokemon names:url
@@ -35,11 +35,11 @@ class App extends Component {
         let pokemonList = []
 
 //reduce results to object so they are easier to search
-        let pokemonLookup = res.body.results.reduce((lookup, next) => {
-          lookup[next.name] = next.url;
+        let pokemonLookup = res.body.results.reduce((lookup, item) => {
+          lookup[item.name] = item.url;
           return lookup
         }, {});
-
+// eslint-disable-next-line
     res.body.results.map(function(poke) {
 
 //2nd API call to get the data from each pokemans url
@@ -47,6 +47,7 @@ class App extends Component {
     .then(res => {
       pokemonList.push(res.body) 
       context.setState({pokemonList})
+      console.log(pokemonList, 'pokemonList')
     })
   });
         try {
@@ -85,7 +86,7 @@ class App extends Component {
         <Header className="header"/>
 
        <div className="header-content">   
-        <h1 className="poke-dex"> Poke Dex </h1>
+        <h1 className="title"> Poké Dex </h1>
         <PokeForm className="poke-form" pokemonSelect={this.pokemonSelect} />
 
       <div>
