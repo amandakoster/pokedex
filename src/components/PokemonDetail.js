@@ -8,8 +8,8 @@ class PokemonDetail extends Component {
     }
 
     getType() {
-        if (this.props.pokeman.name) {
-            return this.props.pokeman.types.reduce( (primaryType, type) => {
+        if (this.props.pokemon.name) {
+            return this.props.pokemon.types.reduce( (primaryType, type) => {
                 primaryType = type.slot === 1 ? type.type.name : '';
                 return primaryType;
             }, '');
@@ -26,7 +26,7 @@ class PokemonDetail extends Component {
                 <h2>{this.props.pokemon.name}</h2>
                     <div className="detailWrapper">
                         <div>
-                            <img src={this.props.pokeman.sprits.front_shiny} alt="pokemon sprite"/>
+                            <img src={this.props.pokemon.sprites.front_shiny} alt="pokemon sprite"/>
                         </div>
 
                         <div>
@@ -39,7 +39,7 @@ class PokemonDetail extends Component {
 
                         <div>
                             <h3>Moves</h3>
-                                <ul>{this.props.pokeman.moves.map((value, i) =>
+                                <ul>{this.props.pokemon.moves.map((value, i) =>
                                 <li key={i}>{value.move.name}</li>
                                 )}
                                 </ul>

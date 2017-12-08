@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import PokemonDetail from './components/PokemonDetail';
+import PokemonList from './components/PokemonList';
 import DataCache from './lib/_.js';
 import './App.css'
 
@@ -48,14 +49,17 @@ class App extends Component {
     }
 
     render() {
+        console.log("APP RENDER STATE", this.state)
         return(
             <div>
                 <Header />
                 <div id="pokeWrapper" className = {this.state.loading}>
+
+                <PokemonList
+                    pokemonList={this.state.pokemonList}
+                    handler={this.selectPokemon} />
                 <PokemonDetail pokemon={this.state.pokemon} />
                 
-
-
                 </div>
             </div>
         )
