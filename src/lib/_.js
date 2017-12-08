@@ -16,14 +16,22 @@ class DataCache {
         .then(data => data)
     }
 
-
     getCache(key){
+        return new Promise((resolve, reject) => {
+            let data = localStorage.getItem(key);
+            if (data) { resolve(JSON.parse(data)); }
+            else { reject("Invalid cache key", key); }
+        });
+    }
+
+
+    setCache(key, value){
         return new Promise ( (resolve, reject) => {
             let safeValue = typeof value === "string" ? value : JSON.stringify(value);
-            if(localSotrage.setItem(key, safeValue) ) { resolve(); }
+            if(localStorage.setItem(key, safeValue) ) { resolve(); }
             else { reject("Unable to caceh", key); }
         });
     }
 }
 
-export default new DataCache
+export default new DataCache();

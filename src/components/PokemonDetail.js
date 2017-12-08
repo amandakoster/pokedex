@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Header from './Header';
 
-class PokemonDetail extends Comment {
+
+class PokemonDetail extends Component {
     constructor(props){
         super(props)
         this.getType = this.getType.bind(this)
@@ -10,7 +10,7 @@ class PokemonDetail extends Comment {
     getType() {
         if (this.props.pokeman.name) {
             return this.props.pokeman.types.reduce( (primaryType, type) => {
-                primaryType = type.slot == 1 ? type.type.nmae : '';
+                primaryType = type.slot === 1 ? type.type.name : '';
                 return primaryType;
             }, '');
 
@@ -18,13 +18,15 @@ class PokemonDetail extends Comment {
     }
 
     render() {
+        console.log(this.state, "RENDER STATE")
         return(
-            this.props.pokeman.name ?
+            this.props.pokemon.name ?
+
             <div id="pokemonContainer" className={this.getType()}>
                 <h2>{this.props.pokemon.name}</h2>
                     <div className="detailWrapper">
                         <div>
-                            <img src={this.props.pokeman.sprits.front_shiny} />
+                            <img src={this.props.pokeman.sprits.front_shiny} alt="pokemon sprite"/>
                         </div>
 
                         <div>
@@ -37,10 +39,10 @@ class PokemonDetail extends Comment {
 
                         <div>
                             <h3>Moves</h3>
-                            <ul>{this.props.pokeman.moves.map((value, i) =>
-                            <li key={i}>{value.move.name}</li>
-                            )}
-                            </ul>
+                                <ul>{this.props.pokeman.moves.map((value, i) =>
+                                <li key={i}>{value.move.name}</li>
+                                )}
+                                </ul>
                         </div>
                             
                     </div>
@@ -51,4 +53,4 @@ class PokemonDetail extends Comment {
     }
 }
 
-expot default PokemonDetail
+export default PokemonDetail;
