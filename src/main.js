@@ -43,6 +43,19 @@ class App extends Component {
             })
     }
 
+    render() {
+        return(
+            <div>
+                <div id="pokeWrapper" className = {this.state.loading}>
+
+                
+
+
+                </div>
+            </div>
+        )
+    }
+
     
 
     })
