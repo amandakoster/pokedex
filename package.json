@@ -9,6 +9,8 @@
     "superagent": "^3.8.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -27,4 +29,6 @@
     "url": "https://github.com/amandakoster/blink-api/issues"
   },
   "homepage": "http://myname.github.io/blink-api"
+
+  
 }
