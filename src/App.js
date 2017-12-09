@@ -58,6 +58,7 @@ class App extends Component {
                 <PokemonList
                     pokemonList={this.state.pokemonList}
                     handler={this.selectPokemon} />
+                    
                 <PokemonDetail pokemon={this.state.pokemon} />
                 
                 </div>

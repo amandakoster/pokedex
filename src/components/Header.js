@@ -7,7 +7,7 @@ const Header = () => {
     return (
 
     <div>
-        <h1>Poké Dex</h1>
+        <h1 className="pokedex-title">Poké Dex</h1>
             <div className="header-backgound"> 
                 <img className="header-image"
                 src={headerImage}

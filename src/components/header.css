@@ -1,8 +1,16 @@
 .header-image {
-    margin: 0;
-    max-width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    width: 100%;
 }
 
-h1 {
+.pokedex-title {
+    color: #000;
     font-family: 'Oswald', sans-serif;
-}
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: calc(4vw + 4vh + 5vmin);
+  } 
