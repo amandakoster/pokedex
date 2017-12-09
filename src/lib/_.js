@@ -29,7 +29,7 @@ class DataCache {
         return new Promise ( (resolve, reject) => {
             let safeValue = typeof value === "string" ? value : JSON.stringify(value);
             if(localStorage.setItem(key, safeValue) ) { resolve(); }
-            else { reject("Unable to caceh", key); }
+            else { reject("Unable to cache", key); }
         });
     }
 }
