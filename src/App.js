@@ -32,7 +32,7 @@ class App extends Component {
             DataCache.fetchData(pokemonAPI)
             .then(data => {
                 loading = "";
-                let pokemonList = data.results;g
+                let pokemonList = data.results;
                 this.setState({pokemonList, loading})
             })
         }
