@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald");
 
 
+li {
+  list-style: none;
+}
+
 .poke-list {
   list-style: none;
 }

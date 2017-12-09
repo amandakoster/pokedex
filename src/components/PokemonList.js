@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './pokeform.css';
+import './pokemon-list.css';
 
 class PokemonList extends Component {
     constructor(props){
@@ -17,25 +17,24 @@ render(){
     return(
         <div id="pokemonList">
                 <form>
-                    <h4>Slect a Pokemon</h4>
+                    <h4>Select a Pokemon</h4>
                     {
-                        this.props.pokemonList.map((pokemon, i) => 
-                    <div key={i}> 
-                    <input
-                    onChange={this.selectPokemon}
-                    type="radio"
-                    id={pokemon.name}
-                    name="pokemon"
-                    value={pokemon.url}
-                    />
-
+                    this.props.pokemonList.map((pokemon, i) => 
+                        <div key={i}> 
+                        <input
+                        onChange={this.selectPokemon}
+                        type="radio"
+                        id={pokemon.name}
+                        name="pokemon"
+                        value={pokemon.url}
+                        />
                     <label htmlFor={pokemon.name}>{pokemon.name}</label>
+
                     </div>
-                    
                     )
                 }
-
             </form>
+
         </div>
      );
     }

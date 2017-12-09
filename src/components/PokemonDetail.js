@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './pokemon-detail.css'
 
 
 class PokemonDetail extends Component {
@@ -26,7 +27,7 @@ class PokemonDetail extends Component {
                 <h2>{this.props.pokemon.name}</h2>
                     <div className="detailWrapper">
                         <div>
-                            <img src={this.props.pokemon.sprites.front_shiny} alt="pokemon sprite"/>
+                            <img className="sprite" src={this.props.pokemon.sprites.front_shiny} alt="pokemon sprite"/>
                         </div>
 
                         <div>
@@ -38,8 +39,8 @@ class PokemonDetail extends Component {
                         </div>
 
                         <div>
-                            <h3>Moves</h3>
-                                <ul>{this.props.pokemon.moves.map((value, i) =>
+                            <h3>Top 5 Moves</h3>
+                                <ul>{this.props.pokemon.moves.slice(0,5).map((value, i) =>
                                 <li key={i}>{value.move.name}</li>
                                 )}
                                 </ul>
