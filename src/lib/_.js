@@ -1,4 +1,5 @@
 import superagent from 'superagent';
+// API calls and setting data int local storage
 
 class DataCache {
 

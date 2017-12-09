@@ -32,7 +32,7 @@ class App extends Component {
             DataCache.fetchData(pokemonAPI)
             .then(data => {
                 loading = "";
-                let pokemonList = data.results;
+                let pokemonList = data.results;g
                 this.setState({pokemonList, loading})
             })
         }
@@ -41,7 +41,7 @@ class App extends Component {
             let loading = "loading";
             this.setState({loading})
 
-            DataCache.fetchData(pokemonURL)
+            DataCache.fetchData(pokemonURL) //pokemonURL is the handler from selectPokemon()
             .then(pokemon => {
                 loading = "";
                 this.setState({pokemon, loading})
